@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
@@ -7,23 +6,42 @@
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
+<link rel="stylesheet" href="wkhtmltopdf.css">
+
 <style>
 @page { margin:1in; }
 
 
-                @media print {
-        .table td, .table th {
-            backzground-color: #fff !important;
-        }
+@media print {
+	.table td, .table th {
+		backzground-color: #fff !important;
+	}
 
-        .table td.bg-light,
-        .table th.bg-light {
-            background-color: #f8f9fa !important;
-        }
-    }
+	.table td.bg-light,
+	.table th.bg-light {
+		background-color: #f8f9fa !important;
+	}
+}
+
+body {
+	font-family: 'Open Sans';
+	text-rendering: optimize-speed;
+}
+
+/* from bs4 */
+address {
+	margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
+
+	h1,h2,h3,h4,p,span,div { font-family: 'Open Sans'; }
+
     
     .container {
     width: 1070px;
+	margin:0 auto;
     }
     .text-right {
       text-align:right;
@@ -34,8 +52,26 @@
     .text-center {
       text-align:center;
     }
+	
+	.font-weight-bold {
+		font-weight: bold;
+	}
     
 
+	.table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	
+	.table td, table th {
+		border: 1px solid #dee2e6;
+		padding: 0.3rem;
+	}
+	
+	th {
+		background-color: #f5f5f5;
+	}
+	
     [class^=col] {
     float: left;
     border:1px solid red;
@@ -44,17 +80,23 @@
     .col-4 {
     width: 33%;
     }
+	.col-2 {
+		width: 16.6666666667%;
+	}
+	
     .col-8 {
       width: 66%;
     }
     
+	.col-10 {
+		width: 80%;
+	}
 .col-6 {
 
     width: 50%;
     border:1px solid red;
 }
 
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
@@ -64,331 +106,119 @@
 </head>
 <body>
 
-
-<div class="mx-auto" style="width: 200px;">
-  Centered element
-</div>
-
 <div class="container">
-        <div class="row">
-  <div class="col-4">
-               <img src="http://global.ctbuh.org/emails/ctbuh_logo.png" alt="CTBUH" class="logo img-fluid" style="max-height:130px;"/>
- </div>
+	<div class="row">
+	
+		<div class="col-4">
+			<img src="http://global.ctbuh.org/emails/ctbuh_logo.png" alt="CTBUH" class="logo img-fluid" style="max-height:130px;"/>
+		</div>
 
+		<div class="col-8 text-right">
+				<address>
+					<strong>Council on Tall Buildings and Urban Habitat</strong>
+					<br>
+					104 South Michigan Avenue, Suite 620<br>
+					Chicago, Illinois 60603 USA<br>
+					+1 (312) 283-5676
+					<br>
+					<a href="mailto:membership@ctbuh.org">membership@ctbuh.org</a>
+				</address>
+		
+		</div>
  
- <div class="col-8">
- 
- <p>
-                    <em>
-                    address here
-                    </em>
-                    </p>
-                    
- </div>
- 
- </div>
+	</div>
  
     <h2 class="text-center mt-4">INVOICE</h2>
+	<h3 class="text-center">Paid</h3>
+	
+	 <div class="row mb-2">
 
-<h3 class="text-center">Paid</h3>
+		<div class="col-8">
+			<div class="row">
+				<div class="col-2 text-right font-weight-bold" style="max-widzth:10%;">Date:</div>
+				
+				<div class="col-10">13 August 2018</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-2 text-right font-weight-bold">To:</div>
+				<div class="col-10">
+				Vivek Bhole
+				Vivek Bhole Architects Pvt. Ltd.
+				Pinnacle Business Park, 1st Floor, , Mahakali Caves Road, MIDC, Near Ahura Centre, Andheri(E), Mumbai, 400093, India
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="col-4 text-right">
+			<span class="font-weight-bold">Invoice No:</span> 0000124
+		</div>
 
- </div>
- 
- <style>
- .m-0 {
-  margin: 0 !important;
-}
+	</div>
+	
+	 <div class="row mt-3">
+          
+          <table class="table table-sm table-bordered">
+                    <thead>
+					<tr>
+						<th class="bg-light">Qty.</th>
+						<th class="bg-light">Item</th>
+						<th class="bg-light">Unit Price</th>
+						<th>USD Total</th>
+                    </tr>
+					</thead>
+                    <tbody>
+					<tr>
+						<td>1</td>
+						<td>Days 2 & 3 Core Conference</td>
+						<td>$150.00</td>
+						<td>$150.00</td>
+					</tr>
+					<tr>
+                        <td colspan="3" class="bg-light font-weight-bold text-right">Subtotal:</td>
+                        <td class="bg-light">$150.00</td>
+                    </tr>
+					<tr>
+						<td colspan="3" class="text-right">Fee Due:</td>
+						<td>$14.33</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right font-weight-bold">Total Due:</td>
+						<td>$164.33</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right">Paid to Date:</td>
+						<td>$150.00</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right">Fee Paid:</td>
+						<td>$12.00</td>
+					</tr>
+					<tr>
+						<td colspan="3" class="text-right font-weight-bold bg-light">Balance:</td>
+						<td class="bg-light">$0.00</td>
+					</tr>
+                    </tbody>
+                </table>
+				
+				<p><strong>PAYMENT TERMS:</strong> {{ $invoice->terms }}</p>
+				  
+				<p class="font-weight-bold">
+				Payment is due now, and no later than December 1 if paying by wire transfer or check.
+				</p>					
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<i>If you have any questions about your invoice or CTBUH Membership, please contact
+					<a href="mailto:membership@ctbuh.org">membership@ctbuh.org</a> or call +1 (312) 283-5676</i>
+				</div>
+			</div>
+			
+	<!--- end container --->
+	</div>
 
-.mt-0,
-.my-0 {
-  margin-top: 0 !important;
-}
-
-.mr-0,
-.mx-0 {
-  margin-right: 0 !important;
-}
-
-.mb-0,
-.my-0 {
-  margin-bottom: 0 !important;
-}
-
-.ml-0,
-.mx-0 {
-  margin-left: 0 !important;
-}
-
-.m-1 {
-  margin: 0.25rem !important;
-}
-
-.mt-1,
-.my-1 {
-  margin-top: 0.25rem !important;
-}
-
-.mr-1,
-.mx-1 {
-  margin-right: 0.25rem !important;
-}
-
-.mb-1,
-.my-1 {
-  margin-bottom: 0.25rem !important;
-}
-
-.ml-1,
-.mx-1 {
-  margin-left: 0.25rem !important;
-}
-
-.m-2 {
-  margin: 0.5rem !important;
-}
-
-.mt-2,
-.my-2 {
-  margin-top: 0.5rem !important;
-}
-
-.mr-2,
-.mx-2 {
-  margin-right: 0.5rem !important;
-}
-
-.mb-2,
-.my-2 {
-  margin-bottom: 0.5rem !important;
-}
-
-.ml-2,
-.mx-2 {
-  margin-left: 0.5rem !important;
-}
-
-.m-3 {
-  margin: 1rem !important;
-}
-
-.mt-3,
-.my-3 {
-  margin-top: 1rem !important;
-}
-
-.mr-3,
-.mx-3 {
-  margin-right: 1rem !important;
-}
-
-.mb-3,
-.my-3 {
-  margin-bottom: 1rem !important;
-}
-
-.ml-3,
-.mx-3 {
-  margin-left: 1rem !important;
-}
-
-.m-4 {
-  margin: 1.5rem !important;
-}
-
-.mt-4,
-.my-4 {
-  margin-top: 1.5rem !important;
-}
-
-.mr-4,
-.mx-4 {
-  margin-right: 1.5rem !important;
-}
-
-.mb-4,
-.my-4 {
-  margin-bottom: 1.5rem !important;
-}
-
-.ml-4,
-.mx-4 {
-  margin-left: 1.5rem !important;
-}
-
-.m-5 {
-  margin: 3rem !important;
-}
-
-.mt-5,
-.my-5 {
-  margin-top: 3rem !important;
-}
-
-.mr-5,
-.mx-5 {
-  margin-right: 3rem !important;
-}
-
-.mb-5,
-.my-5 {
-  margin-bottom: 3rem !important;
-}
-
-.ml-5,
-.mx-5 {
-  margin-left: 3rem !important;
-}
-
-.p-0 {
-  padding: 0 !important;
-}
-
-.pt-0,
-.py-0 {
-  padding-top: 0 !important;
-}
-
-.pr-0,
-.px-0 {
-  padding-right: 0 !important;
-}
-
-.pb-0,
-.py-0 {
-  padding-bottom: 0 !important;
-}
-
-.pl-0,
-.px-0 {
-  padding-left: 0 !important;
-}
-
-.p-1 {
-  padding: 0.25rem !important;
-}
-
-.pt-1,
-.py-1 {
-  padding-top: 0.25rem !important;
-}
-
-.pr-1,
-.px-1 {
-  padding-right: 0.25rem !important;
-}
-
-.pb-1,
-.py-1 {
-  padding-bottom: 0.25rem !important;
-}
-
-.pl-1,
-.px-1 {
-  padding-left: 0.25rem !important;
-}
-
-.p-2 {
-  padding: 0.5rem !important;
-}
-
-.pt-2,
-.py-2 {
-  padding-top: 0.5rem !important;
-}
-
-.pr-2,
-.px-2 {
-  padding-right: 0.5rem !important;
-}
-
-.pb-2,
-.py-2 {
-  padding-bottom: 0.5rem !important;
-}
-
-.pl-2,
-.px-2 {
-  padding-left: 0.5rem !important;
-}
-
-.p-3 {
-  padding: 1rem !important;
-}
-
-.pt-3,
-.py-3 {
-  padding-top: 1rem !important;
-}
-
-.pr-3,
-.px-3 {
-  padding-right: 1rem !important;
-}
-
-.pb-3,
-.py-3 {
-  padding-bottom: 1rem !important;
-}
-
-.pl-3,
-.px-3 {
-  padding-left: 1rem !important;
-}
-
-.p-4 {
-  padding: 1.5rem !important;
-}
-
-.pt-4,
-.py-4 {
-  padding-top: 1.5rem !important;
-}
-
-.pr-4,
-.px-4 {
-  padding-right: 1.5rem !important;
-}
-
-.pb-4,
-.py-4 {
-  padding-bottom: 1.5rem !important;
-}
-
-.pl-4,
-.px-4 {
-  padding-left: 1.5rem !important;
-}
-
-.p-5 {
-  padding: 3rem !important;
-}
-
-.pt-5,
-.py-5 {
-  padding-top: 3rem !important;
-}
-
-.pr-5,
-.px-5 {
-  padding-right: 3rem !important;
-}
-
-.pb-5,
-.py-5 {
-  padding-bottom: 3rem !important;
-}
-
-.pl-5,
-.px-5 {
-  padding-left: 3rem !important;
-}
-
-.m-auto {
-  margin: auto !important;
-}
-
-</style>
 </body>
-
 </html>
 
