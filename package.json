@@ -4,7 +4,7 @@
   "description": "wkhtmltopdf css",
   "main": "index.js",
   "scripts": {
-	"css": "node-sass --include-path src src/bs4-print.scss dist/bs4-print.css"
+    "css": "node-sass --include-path src --output-style compressed src/bs4-print.scss dist/bs4-print.css"
   },
   "repository": {
     "type": "git",
