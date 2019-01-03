@@ -6,103 +6,7 @@
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-<link rel="stylesheet" href="wkhtmltopdf.css">
-
-<style>
-@page { margin:1in; }
-
-
-@media print {
-	.table td, .table th {
-		backzground-color: #fff !important;
-	}
-
-	.table td.bg-light,
-	.table th.bg-light {
-		background-color: #f8f9fa !important;
-	}
-}
-
-body {
-	font-family: 'Open Sans';
-	text-rendering: optimize-speed;
-}
-
-/* from bs4 */
-address {
-	margin-bottom: 1rem;
-    font-style: normal;
-    line-height: inherit;
-}
-
-
-	h1,h2,h3,h4,p,span,div { font-family: 'Open Sans'; }
-
-    
-    .container {
-    width: 1070px;
-	margin:0 auto;
-    }
-    .text-right {
-      text-align:right;
-    }
-    .text-left {
-      text-align:left;
-    }
-    .text-center {
-      text-align:center;
-    }
-	
-	.font-weight-bold {
-		font-weight: bold;
-	}
-    
-
-	.table {
-		width: 100%;
-		border-collapse: collapse;
-	}
-	
-	.table td, table th {
-		border: 1px solid #dee2e6;
-		padding: 0.3rem;
-	}
-	
-	th {
-		background-color: #f5f5f5;
-	}
-	
-    [class^=col] {
-    float: left;
-    border:1px solid red;
-    }
-        
-    .col-4 {
-    width: 33%;
-    }
-	.col-2 {
-		width: 16.6666666667%;
-	}
-	
-    .col-8 {
-      width: 66%;
-    }
-    
-	.col-10 {
-		width: 80%;
-	}
-.col-6 {
-
-    width: 50%;
-    border:1px solid red;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-</style>
+<link rel="stylesheet" href="dist/bs4-print.css">
 </head>
 <body>
 
@@ -129,7 +33,7 @@ address {
 	</div>
  
     <h2 class="text-center mt-4">INVOICE</h2>
-	<h3 class="text-center">Paid</h3>
+	<h3 class="text-center text-success">Paid</h3>
 	
 	 <div class="row mb-2">
 

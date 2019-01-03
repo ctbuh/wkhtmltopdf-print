@@ -1,0 +1,24 @@
+{
+  "name": "print",
+  "version": "1.0.0",
+  "description": "generic invoice template used throughout council",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"css": "node-sass --include-path src src/bs4-print.scss dist/bs4-print.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctbuh/bs4-invoice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctbuh/bs4-invoice/issues"
+  },
+  "homepage": "https://github.com/ctbuh/bs4-invoice#readme",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "node-sass": "^4.11.0"
+  }
+}
