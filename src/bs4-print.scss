@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 $font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
-$font-size-base: 0.9rem;
+//$font-size-base: 0.9rem;
 
-$spacer: 0.5rem;
+//$spacer: 0.5rem;
 $enable-print-styles: false;
+
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
@@ -16,7 +17,6 @@ $enable-print-styles: false;
 @import "node_modules/bootstrap/scss/_mixins";
 @import "node_modules/bootstrap/scss/_root";
 @import "node_modules/bootstrap/scss/_reboot";
-*/
 
 @page { margin:1in; }
 
@@ -36,4 +36,5 @@ h1,h2,h3,h4,p,span,div { font-family: 'Open Sans'; }
     display: table;
     clear: both;
 }
-	
+
+*/
