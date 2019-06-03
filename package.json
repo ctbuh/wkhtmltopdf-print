@@ -7,7 +7,7 @@
     "css": "node-sass --include-path src --output-style compressed src/bs4-print.scss dist/bs4-print.css",
 	"css2": "node-sass --include-path src --output-style compressed src/bs3-print.scss dist/bs3-print.css",
 	
-	"all": "node-sass --include-path src --output-style compressed src -o dist"
+	"all": "node-sass --include-path src --include-path node_modules/bootstrap-sass/assets/stylesheets/ --output-style compressed src -o dist"
 	
   },
   "repository": {
