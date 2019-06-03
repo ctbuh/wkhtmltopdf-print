@@ -1,14 +1,12 @@
 {
   "name": "wkhtmltopdf-print",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "wkhtmltopdf css",
   "main": "index.js",
   "scripts": {
     "css": "node-sass --include-path src --output-style compressed src/bs4-print.scss dist/bs4-print.css",
-	"css2": "node-sass --include-path src --output-style compressed src/bs3-print.scss dist/bs3-print.css",
-	
-	"all": "node-sass --include-path src --include-path node_modules/bootstrap-sass/assets/stylesheets/ --output-style compressed src -o dist"
-	
+    "css2": "node-sass --include-path src --output-style compressed src/bs3-print.scss dist/bs3-print.css",
+    "all": "node-sass --include-path src --include-path node_modules/bootstrap-sass/assets/stylesheets/ --output-style compressed src -o dist"
   },
   "repository": {
     "type": "git",
@@ -21,8 +19,8 @@
   },
   "homepage": "https://github.com/ctbuh/wkhtmltopdf-print",
   "dependencies": {
-    "bootstrap": "^4.2.1",
-    "bootstrap-sass": "^3.4.0",
-    "node-sass": "^4.11.0"
+    "bootstrap": "^4.3.1",
+    "bootstrap-sass": "^3.4.1",
+    "node-sass": "^4.12.0"
   }
 }
