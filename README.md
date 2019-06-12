@@ -35,9 +35,11 @@ $snappy->setOptions($options);
 - fontconfig cache was stale and as a non privileged user, fontconfig was unable to write it to /var/cache/fontconfig,
 - inline css instead of making additional HTTP requests
 - disable IPv6 and use HTTP instead of HTTPS
+- force it to use SSL2? wkhtmltopdf --custom-header Connection Keep-Alive,Upgrade --custom-header-propagation
 - reduce default DPI to 72
 - remove all custom fonts
 - remove all @import rules
+- --no-images option?
 - enable and use cache-dir option
 
 Install missing packages:
@@ -48,5 +50,6 @@ sudo apt-get install -y openssl build-essential xorg libssl-dev openssl-devel
 ### Links
 - https://github.com/wkhtmltopdf/wkhtmltopdf/issues/1510
 - http://perfectionkills.com/profiling-css-for-fun-and-profit-optimization-notes/
+- https://jonassebastianohlsson.com/criticalpathcssgenerator/
 
 
