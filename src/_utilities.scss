@@ -2,3 +2,27 @@
 @import "utilities/_font_size";
 @import "utilities/_margin";
 @import "utilities/_padding";
+
+/* misc global helpers that don't fit anywhere else */
+
+.break-after {
+  page-break-after: always;
+}
+
+.break-after:last-of-type {
+  page-break-after: auto;
+}
+
+.no-breaks {
+  page-break-inside: avoid;
+}
+
+@media print {
+  /*
+https://github.com/wkhtmltopdf/wkhtmltopdf/issues/1524#issuecomment-41529705
+*/
+  .table-responsive {
+    overflow: visible !important;
+  }
+}
+

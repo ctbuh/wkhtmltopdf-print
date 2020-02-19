@@ -1,14 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-$font-family-sans-serif: 'Open Sans', Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
 //$font-size-base: 0.9rem;
 
 //$spacer: 0.5rem;
 $enable-print-styles: false;
 
-
 @import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  text-rendering: optimize-speed;
+}
+
+// wkhtmltopdf does not support flex
+
+[class^="col"] {
+  float: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+div {
+  font-family: "Open Sans";
+}
+
+*/
 
 /*
 @import "node_modules/bootstrap/scss/_functions";
@@ -17,24 +44,5 @@ $enable-print-styles: false;
 @import "node_modules/bootstrap/scss/_mixins";
 @import "node_modules/bootstrap/scss/_root";
 @import "node_modules/bootstrap/scss/_reboot";
-
-@page { margin:1in; }
-
-body {
-	text-rendering: optimize-speed;
-}
-
-h1,h2,h3,h4,p,span,div { font-family: 'Open Sans'; }
-
-[class^=col] {
-	float: left;
-	border:1px solid red;
-}
-	
-.row:after {
-	content: "";
-    display: table;
-    clear: both;
-}
 
 */
